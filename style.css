@@ -1,0 +1,429 @@
+/* estilos.css - Estilos base */ 
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+} 
+body { 
+  font-family: Arial, sans-serif; 
+  padding: 20px; 
+  background: #f79161; 
+} 
+/* Estilo visual para las cajas de ejemplo */ 
+.caja { 
+  background: #f0a2a2; 
+  color: rgb(255, 93, 93); 
+  padding: 20px; 
+  text-align: center; 
+  font-weight: bold; 
+  border-radius: 6px; 
+} 
+.contenedor { 
+  display: flex; 
+  flex-direction: row;           /* Prueba 1: fila (default) */ 
+  /* flex-direction: column; */  /* Prueba 2: columna */ 
+  /* flex-direction: row-reverse; */ /* Prueba 3: fila invertida */ 
+  background: #ec6857; 
+  justify-content: center;
+  padding: 10px; 
+  gap: 10px; 
+} 
+.navbar { 
+
+  display: flex; 
+
+  justify-content: space-between; 
+
+  align-items: center; 
+
+  background: #2c3e50; 
+
+  padding: 15px 20px; 
+
+  color: white; 
+
+} 
+
+.logo { 
+
+  font-size: 24px; 
+
+  font-weight: bold; 
+
+} 
+
+.nav-links { 
+
+  display: flex; 
+
+  gap: 20px; 
+
+} 
+
+.nav-links a { 
+
+  color: white; 
+
+  text-decoration: none; 
+
+} 
+.centrado-perfecto { 
+
+  display: flex; 
+
+  justify-content: center;  /* centra horizontalmente */ 
+
+  align-items: center;      /* centra verticalmente */ 
+
+  height: 300px; 
+
+  background: #ecf0f1; 
+
+  border: 2px dashed #bdc3c7; 
+} 
+.cards { 
+
+  display: flex; 
+
+  flex-wrap: wrap; 
+
+  gap: 15px; 
+
+} 
+
+.card { 
+
+  flex: 1 1 250px;  /* grow shrink basis */ 
+
+  background: #3498db; 
+
+  color: white; 
+
+  padding: 30px; 
+
+  text-align: center; 
+
+  border-radius: 8px; 
+
+} 
+.mi-grid { 
+
+  display: grid; 
+
+  grid-template-columns: 1fr 1fr 1fr;  /* 3 columnas iguales */ 
+
+  gap: 10px; 
+
+  background: #ecf0f1; 
+
+  padding: 10px; 
+
+} 
+.mi-grid { 
+
+  display: grid; 
+
+  grid-template-columns: 200px 1fr 1fr; 
+
+  /* 1a columna: 200px fijos */ 
+
+  /* 2a y 3a: reparten el espacio restante */ 
+
+  gap: 10px; 
+
+  background: #ecf0f1; 
+
+  padding: 10px; 
+
+} 
+.mi-grid { 
+
+  display: grid; 
+
+  grid-template-columns: 1fr 1fr; 
+
+/* En vez de escribir 1fr 1fr 1fr 1fr, usa: */ 
+
+grid-template-columns: repeat(4, 1fr); 
+
+  
+
+/* También puedes mezclar: */ 
+
+grid-template-columns: 200px repeat(3, 1fr); 
+
+/* = 200px 1fr 1fr 1fr */ 
+
+  /* Fila 1: 100px, Fila 2: 200px, Fila 3: 100px */ 
+
+  gap: 10px; 
+
+  background: #ecf0f1; 
+
+  padding: 10px; 
+
+
+}
+ .pagina { 
+
+  display: grid; 
+
+  grid-template-areas: 
+
+    "header  header" 
+
+    "sidebar contenido" 
+
+    "footer  footer"; 
+
+  grid-template-columns: 200px 1fr; 
+
+  grid-template-rows: 60px 1fr 50px; 
+
+  gap: 10px; 
+
+  height: 100vh; 
+
+  padding: 10px; 
+
+} 
+
+.header    { grid-area: header;    background: #2c3e50; color: white; padding: 15px; } 
+
+.sidebar   { grid-area: sidebar;   background: #34495e; color: white; padding: 15px; } 
+
+.contenido { grid-area: contenido; background: #ecf0f1; padding: 15px; } 
+
+.footer    { grid-area: footer;    background: #2c3e50; color: white; padding: 15px; } 
+
+
+.galeria { 
+
+  display: grid; 
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+
+  gap: 15px; 
+
+  padding: 20px; 
+
+} 
+
+.item { 
+
+  background: #2ecc71; 
+
+  color: white; 
+
+  padding: 40px 20px; 
+
+  text-align: center; 
+
+  border-radius: 8px; 
+
+  font-weight: bold; 
+
+} 
+
+.dashboard { 
+
+  display: grid; 
+
+  grid-template-columns: repeat(3, 1fr); 
+
+  grid-template-rows: 200px 150px; 
+
+  gap: 15px; 
+
+  padding: 20px; 
+
+} 
+
+.widget { 
+
+  background: #9b59b6; 
+
+  color: white; 
+
+  padding: 20px; 
+
+  border-radius: 8px; 
+
+  display: flex; 
+
+  align-items: center; 
+
+  justify-content: center; 
+
+  font-weight: bold; 
+
+} 
+
+/* Ocupa 2 columnas */ 
+
+.grande { 
+
+  grid-column: span 2; 
+
+} 
+
+/* Ocupa las 3 columnas */ 
+
+.ancho { 
+
+  grid-column: 1 / -1;  /* desde la primera hasta la última línea */ 
+
+} 
+/* ============================== */ 
+
+/*  LAYOUT GENERAL CON GRID       */ 
+
+/* ============================== */ 
+
+.sitio { 
+
+  display: grid; 
+
+  grid-template-areas: 
+
+    "header  header" 
+
+    "sidebar main" 
+
+    "footer  footer"; 
+
+  grid-template-columns: 220px 1fr; 
+
+  grid-template-rows: auto 1fr auto; 
+
+  min-height: 100vh; 
+
+  gap: 0; 
+
+} 
+
+.site-header  { grid-area: header; } 
+
+.site-sidebar { grid-area: sidebar; } 
+
+.site-main    { grid-area: main; } 
+
+.site-footer  { grid-area: footer; } 
+
+  
+
+/* ============================== */ 
+
+/*  COMPONENTES CON FLEXBOX       */ 
+
+/* ============================== */ 
+
+  
+
+/* Header: logo a la izquierda, menu a la derecha */ 
+
+.site-header { 
+
+  display: flex; 
+
+  justify-content: space-between; 
+
+  align-items: center; 
+
+  background: #2c3e50; 
+
+  color: white; 
+
+  padding: 15px 25px; 
+
+} 
+
+.menu { 
+
+  display: flex; 
+
+  gap: 20px; 
+
+} 
+
+.menu a { color: white; text-decoration: none; } 
+
+  
+
+/* Sidebar */ 
+
+.site-sidebar { 
+
+  background: #34495e; 
+
+  color: white; 
+
+  padding: 20px; 
+
+} 
+
+.site-sidebar ul { 
+
+  list-style: none; 
+
+  display: flex; 
+
+  flex-direction: column; 
+
+  gap: 10px; 
+
+  margin-top: 10px; 
+
+} 
+
+  
+
+/* Contenido principal: posts con Flexbox wrap */ 
+
+.site-main { padding: 25px; } 
+
+.posts { 
+
+  display: flex; 
+
+  flex-wrap: wrap; 
+
+  gap: 15px; 
+
+  margin-top: 20px; 
+
+} 
+
+.post { 
+
+  flex: 1 1 200px; 
+
+  background: #3498db; 
+
+  color: white; 
+
+  padding: 30px; 
+
+  border-radius: 8px; 
+
+  text-align: center; 
+
+} 
+
+  
+
+/* Footer */ 
+
+.site-footer { 
+
+  display: flex; 
+
+  justify-content: center; 
+
+  background: #2c3e50; 
+
+  color: #95a5a6; 
+
+  padding: 15px; 
+
+} 
